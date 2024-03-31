@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .actions {
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #notice {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      color: #333;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Verify</h1>
+  </header>
+
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+
+    <%= form_tag(verify_url) do %>
+      <div class="field">
+        <%= label_tag :verification_code %>
+        <%= text_field_tag :verification_code %>
+      </div>
+
+      <div class="actions">
+        <%= submit_tag 'Verify' %>
+      </div>
+    <% end %>
+
+    <%= link_to 'Back', users_path %>
+  </div>
+</body>
+</html>
