@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Forecast</title>
+  <%= stylesheet_link_tag 'styles' %>
+</head>
+<body>
+  <div class="container">
+    <h1>Weather Forecast</h1>
+
+    <p><%= image_tag('weather.webp', size: '300x200') %></p>
+    <p>City: <%= @weather_data['location']['name'] %></p>
+    <p>Region: <%= @weather_data['location']['region'] %></p>
+    <p>Local Time: <%= @weather_data['location']['localtime'] %></p>
+
+    <p>Temperature: <%= @weather_data['current']['temp_c'] %>°C</p>
+    <p>Weather Condition: <%= @weather_data['current']['condition']['text'] %></p>
+    <p>Humidity: <%= @weather_data['current']['humidity'] %></p>
+    <p>Cloud: <%= @weather_data['current']['cloud'] %></p>
+
+    <%= link_to 'Back', users_path, class: 'link' %>
+  </div>
+</body>
+</html>
